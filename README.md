@@ -2,7 +2,7 @@
 
 Dynamic, evolvable NFTs powered by on‑chain SVG rendering and interactive lifecycle mechanics. Runs on the Avalanche Fuji testnet (no real AVAX required).
 
-Live Demo: https://chrono-forge-theta.vercel.app
+Live Demo: (attached above)
 
 > NFTs (Aetherium Shards) evolve through daily energizing, trait infusion, cleansing, and multi‑generational forging.
 
