@@ -1,137 +1,191 @@
-#  **Chrono Forge**: Dynamic NFT Evolution Platform. 
-This project runs exclusively on Avalanche Fuji testnet - no real AVAX required!
+# Chrono Forge
 
-Chrono-Forge is a cutting-edge NFT platform featuring dynamic on-chain SVG generation and evolving attributes. Built with Next.js, Hardhat, and modern Web3 tools.
+Dynamic, evolvable NFTs powered by on‑chain SVG rendering and interactive lifecycle mechanics. Runs on the Avalanche Fuji testnet (no real AVAX required).
 
-❄️ **Avalanche Fuji Only**: This project runs exclusively on Avalanche Fuji testnet - no real ETH required!
+Live Demo: https://chrono-forge-theta.vercel.app
 
-## ✨ Features
+> NFTs (Aetherium Shards) evolve through daily energizing, trait infusion, cleansing, and multi‑generational forging.
 
-- **Dynamic NFT Evolution**: Watch your Aetherium Shards transform through interactions
-- **On-Chain SVG Generation**: Fully on-chain artwork that changes with your NFT's state
-- **Daily Energize System**: Build power through daily interactions and streak bonuses
-- **Trait Infusion**: Burn partner tokens to grant unique abilities
-- **Generational Forging**: Combine evolved NFTs for rare next-generation specimens
-- **Purity System**: Cleanse unwanted traits to improve your NFT's core attributes
+## ✨ Core Features
 
-## ❄️ Avalanche Fuji Testnet
-
-- **Lightning Fast**: Sub-second finality with very low fees
-- **Free AVAX**: Get tokens from multiple reliable faucets
-- **Highly Reliable**: Well-supported testnet environment
-- **EVM Compatible**: Same Solidity contracts work perfectly
-
-All testnet tokens are free via faucets. See our [Avalanche Setup Guide](./TESTNET_GUIDE.md) for instructions.ono-Forge 🔥✨
-
-> **Dynamic NFTs that evolve through on-chain interactions**
-
-Chrono-Forge is a revolutionary NFT project featuring dynamic on-chain SVG generation, evolving attributes, and multi-generational forging mechanics. Built on Base blockchain with a modern Next.js frontend.
-
-## 🌟 Features
-
-### Core NFT Mechanics
-- **Dynamic On-Chain SVG**: NFT artwork generated directly by smart contract
-- **Evolvable Attributes**: Energy Level, Purity, Core Element, Generation, and Infused Traits
-- **ERC721 Compliance**: Full compatibility with wallets and marketplaces
-- **Real-time Updates**: UI automatically reflects on-chain changes
+### Evolution & State
+- Dynamic NFT evolution: Aetherium Shards transform based on user actions
+- On-chain SVG artwork: Generated directly in the smart contract; updates as attributes change
+- Evolving attributes: Energy, Purity, Core Element, Generation, Infused Traits
+- Generational forging: Combine evolved NFTs to mint higher‑generation specimens
 
 ### User Actions
-- 🔥 **Mint**: Acquire your first Aetherium Shard
-- ⚡ **Energize**: Daily action to increase Energy Level with streak bonuses
-- 🧬 **Infuse**: Burn partner tokens to grant unique traits
-- 🦋 **Evolve**: Transform NFT into advanced forms
-- 🔨 **Forge**: Combine two evolved NFTs for next-generation specimens
-- 🌊 **Cleanse**: Remove unwanted traits to improve Purity
+- 🔥 Mint: Acquire your first Aetherium Shard
+- ⚡ Energize (daily): Increases Energy; streak bonuses reward consistency
+- 🧬 Infuse: Burn partner tokens (future integrations) to add unique traits
+- 🐉 Evolve: Advance the form once thresholds are met
+- 🛠 Forge: Merge two qualified NFTs for a next‑generation shard
+- 🌊 Cleanse: Remove unwanted traits to improve Purity
+
+### Systems
+- Daily streak logic for energizing
+- Trait purity vs infused ability balance
+- Fully reactive UI reflecting on-chain state
+
+## 🧊 Avalanche Fuji Testnet
+
+- Fast confirmations / low fees
+- EVM compatible (Solidity + existing tooling)
+- Free test AVAX via faucets
+
+Get test AVAX:
+1. Visit https://faucet.avax.network/
+2. Select Fuji / enter wallet / request funds
 
 ## 🛠 Tech Stack
 
 ### Smart Contracts
-- **Solidity** - Industry standard for EVM chains
-- **Hardhat** - Development framework
-- **OpenZeppelin** - Secure, audited contract libraries
-- **Base Blockchain** - Layer 2 Ethereum scaling solution
+- Solidity
+- Hardhat
+- OpenZeppelin libraries
+- (Configured for Avalanche Fuji)
 
 ### Frontend
-- **Next.js 13+** - React framework with App Router
-- **TypeScript** - Type-safe development
-- **Wagmi & Viem** - Web3 wallet integration
-- **Tailwind CSS** - Utility-first styling
-- **Radix UI** - Accessible component primitives
+- Next.js 15 (App Router)
+- TypeScript
+- Wagmi + Viem (wallet & chain interaction)
+- Tailwind CSS + utility layering
+- Radix UI primitives
+- React Query (@tanstack/react-query) for data/state
+- WalletConnect (optional, via Project ID)
+
+## 📂 Suggested Project Structure (abridged)
+- contracts/ Core NFT + trait/evolution logic
+- scripts/ Deployment & maintenance (deploy.ts, etc.)
+- app/ Next.js route handlers & UI
+- components/ Reusable UI modules
+- lib/ Chain config, wagmi client, helpers
+- hooks/ Custom React hooks (query + evolution logic)
+
+(Adjust based on actual repo layout.)
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ and npm/yarn
+- Node.js 18+
+- npm or yarn
 - Git
-- MetaMask or compatible Web3 wallet
+- MetaMask (or compatible wallet)
 
-### 1. Clone and Install
+### 1. Clone & Install
 ```bash
-git clone https://github.com/your-username/chrono-forge.git
-cd chrono-forge
+git clone https://github.com/soumyadeepsarkar-2004/chrono_forge.git
+cd chrono_forge
 npm install
 ```
 
 ### 2. Environment Setup
-Copy `.env.example` to `.env.local` and configure:
+Copy example file:
 ```bash
 cp .env.example .env.local
 ```
 
-⚠️ **Important**: Update `NEXT_PUBLIC_CONTRACT_ADDRESS` with your deployed contract address
-
-### 3. Get Free AVAX Tokens:**
-- Visit: https://faucet.avax.network/
-- Request free AVAX tokens for Avalanche Fuji testnet
-
-### 4. Deploy to Avalanche:**
-```bash
-# Deploy to Avalanche Fuji
-npx hardhat run scripts/deploy.ts --network avalancheFuji
-
-### 5. Update Contract Address:**
-```bash
-# Update .env.local with the deployed contract address
+Add/update values (example list; adjust to what the project actually uses):
+```
+NEXT_PUBLIC_CONTRACT_ADDRESS=0xYourDeployedContract
+NEXT_PUBLIC_RPC_URL=https://api.avax-test.network/ext/bc/C/rpc
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id   # optional
+NEXT_PUBLIC_CHAIN_ID=43113
 ```
 
-### 6. Run Development Server:**
+### 3. Deploy Contracts (Avalanche Fuji)
+```bash
+npx hardhat run scripts/deploy.ts --network avalancheFuji
+```
+Then update `NEXT_PUBLIC_CONTRACT_ADDRESS` in `.env.local`.
+
+### 4. Run Dev Server
 ```bash
 npm run dev
 ```
+Visit http://localhost:3000 and connect wallet.
 
-Visit `http://localhost:3000` and connect your wallet to start minting!
+### 5. Mint & Interact
+- Mint an Aetherium Shard
+- Energize daily to raise Energy
+- Infuse traits (future integrations)
+- Forge/evolve when thresholds met
+
+## 🔄 Updating Artwork
+Because SVG is generated on-chain, any attribute change (energy, purity, traits, generation) triggers a fresh tokenURI render—no off-chain metadata refresh required.
+
+## ⚙️ Contract Interaction (Example viem/wagmi snippet)
+```ts
+// pseudo example
+const { writeContract } = useWriteContract();
+writeContract({
+  address: CONTRACT_ADDRESS,
+  abi: chronoForgeAbi,
+  functionName: 'energize',
+  args: [tokenId],
+});
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧪 Testing (if implemented)
+```bash
+npx hardhat test
+```
+Add tests under `test/` to cover:
+- Minting rules
+- Energize cooldown/streak
+- Trait infusion / cleanse logic
+- Generation forging constraints
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛡 Security & Integrity
+- OpenZeppelin base inheritance for ERC721
+- Purity system prevents uncontrolled trait accumulation
+- Controlled forging ensures rarity escalation
+- Recommend adding access-control & pausable features if not already present
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧭 Roadmap (Suggested)
+- Partner token integration for infusion
+- Achievement / streak badges
+- Marketplace metadata sync / indexer script
+- Cross-chain expansion (if desired)
+- In-contract rarity scoring
 
-## 🔧 Troubleshooting
+## 🧩 Troubleshooting
 
-### WebSocket/Transport Errors
-If you see console errors like "Fatal socket error received, closing transport":
-- These are WalletConnect WebSocket connection issues
-- The app has built-in error handling to prevent crashes
-- Functionality remains intact - you can still use injected wallets (MetaMask)
-- To resolve: Get a proper WalletConnect Project ID from [cloud.reown.com](https://cloud.reown.com)
+### WalletConnect WebSocket Errors
+Messages like “Fatal socket error received, closing transport”:
+- Typically transient testnet/WebSocket issues
+- App still works with injected wallets (MetaMask)
+- Provide a valid Project ID to stabilize
 
-### Missing WalletConnect Project ID
-- WalletConnect will be disabled but other wallets work fine
-- Update `.env.local` with your project ID to enable WalletConnect
+### Missing Contract Address
+- UI will fail to read NFT state
+- Ensure deployment succeeded and address copied correctly
 
-## Learn More
+### RPC Instability
+- Switch to a reliable Avalanche Fuji RPC endpoint
+- Clear wallet network cache
 
-To learn more about Next.js, take a look at the following resources:
+## 📚 Learn More
+- Avalanche Docs: https://docs.avax.network/
+- Hardhat: https://hardhat.org/
+- Wagmi: https://wagmi.sh/
+- Viem: https://viem.sh/
+- OpenZeppelin: https://docs.openzeppelin.com/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Deployment
+To deploy frontend (example with Vercel):
+```bash
+npm run build
+vercel --prod
+```
+Ensure production `.env` has the same contract address and chain configuration.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Attribution
+Fork of original project: https://github.com/Aritra203/chrono_forge  
+Enhanced for Avalanche Fuji testnet usage.
 
-## Deploy on Vercel
+## ⚠ Disclaimer
+Chrono Forge currently operates on a test network. Tokens/NFTs have no real-world monetary value. Use only test AVAX.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+(If a license exists in the original upstream repo, add it here. Otherwise consider adding MIT/Apache-2.0.)
